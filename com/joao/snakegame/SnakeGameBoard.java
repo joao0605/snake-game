@@ -45,13 +45,16 @@ public class SnakeGameBoard extends JPanel implements ActionListener {
         setBackground(Color.black);
         setFocusable(true);
         setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
+        loadAllImages();
+        initializeGame();
 
     }
 
     private void loadAllImages(){
+
         ImageIcon ballIcon = new ImageIcon("src/resources/dot.png");
         ballImg = ballIcon.getImage();
-        ImageIcon appleIcon = new ImageIcon("src/resources/aplle.png");
+        ImageIcon appleIcon = new ImageIcon("src/resources/apple.png");
         appleImg = appleIcon.getImage();
         ImageIcon headIcon = new ImageIcon("src/resources/head.png");
         headImg = headIcon.getImage();
@@ -59,6 +62,7 @@ public class SnakeGameBoard extends JPanel implements ActionListener {
 
     private void initializeGame(){
         snakeSize = 3;
+
         for(int p=0; p<snakeSize; p++){
             xPosition[p] = 50-p*10;
             yPosition[p] = 50;
